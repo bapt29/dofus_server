@@ -4,9 +4,9 @@ class Client:
         self.socket = client_socket
         self.address = client_address
 
-        self.user_id = None
+        self.account = None
 
         self.encryption_key = None
 
     def is_authenticated(self):
-        return False if self.user_id else True
+        return False if self.account else True
