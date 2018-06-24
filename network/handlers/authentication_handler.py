@@ -24,6 +24,8 @@ class AuthenticationHandler(BaseHandler):
                     self.authenticate()
                 else:
                     self.send_data(AccountProtocol.queue_position(1, 1, 0, True, 1))
+            elif packet_subtype == '':
+                pass
 
     def authenticate(self):
         self.client.user_id = 1
