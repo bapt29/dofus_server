@@ -4,7 +4,7 @@ from database.models.server import Server
 from database.models.account import Account
 from database.models.character import Character
 from database.models.guild import Guild
-from database.models.guild_members import GuildMembers
+from database.models.guild_member import GuildMembers
 
 
 class Database:
