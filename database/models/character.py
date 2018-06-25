@@ -8,13 +8,15 @@ class Character(Base):
     __tablename__ = "characters"
 
     id = Column(Integer, primary_key=True)
+
     account_id = Column(Integer, ForeignKey('accounts.id'), nullable=False)
     server_id = Column(Integer, ForeignKey('servers.id'), nullable=False)
 
+    account = relationship("Account", back_populates="characters", uselist=False)
+    server = relationship("Server", back_populates="characters", uselist=False)
+    guild = relationship("Guild", back_populates="guilds", uselist=False)
+
     name = Column(String(255), nullable=False)
-    account = relationship("Account", backref="characters")
-    server = relationship("Server", backref="characters")
-    guild = relationship("Guild", secondary="guild_members")
     breed = Column(Integer, nullable=False)
     sex = Column(Boolean, nullable=False)
     skin = Column(Integer, nullable=False)
